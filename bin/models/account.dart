@@ -7,7 +7,8 @@ class Account {
   Account(
       {required this.name,
       required this.balance,
-      required this.isAuthenticated});
+      required this.isAuthenticated}): assert(name.isNotEmpty, "O nome não pode ser uma String vazia"),
+        assert(balance >= 0);
 
   //método editBalance usado para editar o saldo.
   editBalance({required value}) {
